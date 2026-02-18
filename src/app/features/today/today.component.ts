@@ -1,5 +1,5 @@
 import { Component, inject, OnInit, computed } from '@angular/core';
-import { TodayService } from '../../core/services/today.service';
+import { TodayService, isValidEntry } from '../../core/services/today.service';
 import { NavbarComponent } from '../../shared/components/navbar/navbar.component';
 import { LoadingSpinnerComponent } from '../../shared/components/loading-spinner/loading-spinner.component';
 import { CheckinMorningComponent } from './checkin-morning/checkin-morning.component';
@@ -48,6 +48,7 @@ export class TodayComponent implements OnInit {
     const t = this.svc.today();
     if (t === undefined) return 'loading';
     if (t === null) return 'morning';
+    if (!isValidEntry(t)) return 'morning';
     if (!t.skipped && t.completed === null) return 'focus';
     return 'done';
   });

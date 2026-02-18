@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { tap } from 'rxjs';
 import { environment } from '../../../environments/environment';
 import type { User, AuthResponse } from '../models/user.model';
+import { normalizeUser } from '../models/user.model';
 
 const TOKEN_KEY = 'suc_token';
 
@@ -61,12 +62,12 @@ export class AuthService {
     if (isPlatformBrowser(this.platformId)) {
       localStorage.setItem(TOKEN_KEY, res.token);
     }
-    this.currentUser.set(res.user);
+    this.currentUser.set(normalizeUser(res.user));
   }
 
   private fetchMe() {
-    this.http.get<User>(`${environment.apiUrl}/api/me`).subscribe({
-      next: (u) => this.currentUser.set(u),
+    this.http.get<unknown>(`${environment.apiUrl}/api/me`).subscribe({
+      next: (u) => this.currentUser.set(normalizeUser(u)),
       error: () => this.logout(),
     });
   }

@@ -23,11 +23,11 @@ Etapas ordenadas para seguir o escopo do frontend Angular com identidade visual 
 
 ## Fase 2 — Estrutura de Pastas (Feature-First)
 
-- [ ] **2.1** Criar estrutura sob `src/app/`:
+- [x] **2.1** Criar estrutura sob `src/app/`:
   - `core/` → `guards/`, `interceptors/`, `models/`, `services/`
   - `shared/` → `components/`, `pipes/`
   - `features/` → `auth/`, `today/`, `history/`, `settings/`
-- [ ] **2.2** Garantir que todos os componentes sejam **Standalone** (sem NgModules)
+- [x] **2.2** Garantir que todos os componentes sejam **Standalone** (sem NgModules)
 
 ---
 

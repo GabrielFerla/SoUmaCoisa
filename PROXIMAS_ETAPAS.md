@@ -33,13 +33,13 @@ Etapas ordenadas para seguir o escopo do frontend Angular com identidade visual 
 
 ## Fase 3 — Core: Modelos e Configuração
 
-- [ ] **3.1** Criar `core/models/user.model.ts`: interfaces `User`, `AuthResponse`
-- [ ] **3.2** Criar `core/models/daily-entry.model.ts`: interfaces `DailyEntry`, `HistoryResponse`
-- [ ] **3.3** Configurar `app.config.ts`:
+- [x] **3.1** Criar `core/models/user.model.ts`: interfaces `User`, `AuthResponse`
+- [x] **3.2** Criar `core/models/daily-entry.model.ts`: interfaces `DailyEntry`, `HistoryResponse`
+- [x] **3.3** Configurar `app.config.ts`:
   - `provideRouter(routes, withComponentInputBinding())`
   - `provideHttpClient(withInterceptors([jwtInterceptor, errorInterceptor]))`
-- [ ] **3.4** Configurar `app.routes.ts`: rotas raiz com lazy loading e `authGuard` onde aplicável
-- [ ] **3.5** Manter `app.component.ts` minimalista (apenas `<router-outlet>`)
+- [x] **3.4** Configurar `app.routes.ts`: rotas raiz com lazy loading e `authGuard` onde aplicável
+- [x] **3.5** Manter `app.component.ts` minimalista (apenas `<router-outlet>`)
 
 ---
 

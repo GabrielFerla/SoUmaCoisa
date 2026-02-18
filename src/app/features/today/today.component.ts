@@ -1,5 +1,6 @@
 import { Component, inject, OnInit, computed } from '@angular/core';
 import { TodayService } from '../../core/services/today.service';
+import { NavbarComponent } from '../../shared/components/navbar/navbar.component';
 import { LoadingSpinnerComponent } from '../../shared/components/loading-spinner/loading-spinner.component';
 import { CheckinMorningComponent } from './checkin-morning/checkin-morning.component';
 import { FocusCardComponent } from './focus-card/focus-card.component';
@@ -11,12 +12,14 @@ type ViewState = 'loading' | 'morning' | 'focus' | 'done';
   selector: 'app-today',
   standalone: true,
   imports: [
+    NavbarComponent,
     LoadingSpinnerComponent,
     CheckinMorningComponent,
     FocusCardComponent,
     DayDoneComponent,
   ],
   template: `
+    <app-navbar />
     <div class="min-h-screen bg-ink">
       @switch (viewState()) {
         @case ('loading') {

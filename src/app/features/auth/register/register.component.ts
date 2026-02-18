@@ -61,8 +61,8 @@ import { AuthService } from '../../../core/services/auth.service';
         </div>
         <button
           type="submit"
-          [disabled]="form.invalid || loading()"
-          class="w-full bg-accent text-cream rounded-btn py-3 font-bold text-sm hover:bg-accent-light transition-colors disabled:opacity-40"
+          [disabled]="loading()"
+          class="w-full bg-accent text-cream rounded-btn py-3 font-bold text-sm hover:bg-accent-light transition-colors disabled:opacity-40 disabled:pointer-events-none"
         >
           {{ loading() ? 'Cadastrando...' : 'Cadastrar' }}
         </button>
@@ -90,12 +90,19 @@ export class RegisterComponent {
   });
 
   onSubmit() {
-    if (this.form.invalid) return;
+    this.form.markAllAsTouched();
+    if (this.form.invalid) {
+      this.errorMessage.set('Preencha nome, e-mail e senha (mín. 6 caracteres).');
+      return;
+    }
     this.errorMessage.set(null);
     this.loading.set(true);
     const { displayName, email, password } = this.form.getRawValue();
     this.auth.register(displayName, email, password).subscribe({
-      next: () => this.router.navigate(['/home']),
+      next: () => {
+        this.loading.set(false);
+        this.router.navigate(['/home']);
+      },
       error: (err) => {
         this.loading.set(false);
         const msg = err?.error?.message ?? err?.message ?? 'Não foi possível cadastrar. Tente outro e-mail.';

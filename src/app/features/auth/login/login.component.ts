@@ -48,8 +48,8 @@ import { AuthService } from '../../../core/services/auth.service';
         </div>
         <button
           type="submit"
-          [disabled]="form.invalid || loading()"
-          class="w-full bg-accent text-cream rounded-btn py-3 font-bold text-sm hover:bg-accent-light transition-colors disabled:opacity-40"
+          [disabled]="loading()"
+          class="w-full bg-accent text-cream rounded-btn py-3 font-bold text-sm hover:bg-accent-light transition-colors disabled:opacity-40 disabled:pointer-events-none"
         >
           {{ loading() ? 'Entrando...' : 'Entrar' }}
         </button>
@@ -76,13 +76,20 @@ export class LoginComponent {
   });
 
   onSubmit() {
-    if (this.form.invalid) return;
+    this.form.markAllAsTouched();
+    if (this.form.invalid) {
+      this.errorMessage.set('Preencha e-mail e senha corretamente.');
+      return;
+    }
     this.errorMessage.set(null);
     this.loading.set(true);
     this.auth
       .login(this.form.getRawValue().email, this.form.getRawValue().password)
       .subscribe({
-        next: () => this.router.navigate(['/home']),
+        next: () => {
+          this.loading.set(false);
+          this.router.navigate(['/home']);
+        },
         error: (err) => {
           this.loading.set(false);
           const msg = err?.error?.message ?? err?.message ?? 'E-mail ou senha inválidos.';

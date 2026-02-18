@@ -45,9 +45,9 @@ Etapas ordenadas para seguir o escopo do frontend Angular com identidade visual 
 
 ## Fase 4 — Core: Guards e Interceptors
 
-- [ ] **4.1** Implementar `auth.guard.ts` (CanActivateFn): redirecionar para `/auth/login` se não autenticado
-- [ ] **4.2** Implementar `jwt.interceptor.ts`: adicionar header `Authorization: Bearer <token>` quando houver token
-- [ ] **4.3** Implementar `error.interceptor.ts`: em 401 fazer logout e redirecionar para login
+- [x] **4.1** Implementar `auth.guard.ts` (CanActivateFn): redirecionar para `/auth/login` se não autenticado
+- [x] **4.2** Implementar `jwt.interceptor.ts`: adicionar header `Authorization: Bearer <token>` quando houver token
+- [x] **4.3** Implementar `error.interceptor.ts`: em 401 fazer logout e redirecionar para login
 
 ---
 

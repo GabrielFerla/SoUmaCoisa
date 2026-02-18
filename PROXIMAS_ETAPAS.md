@@ -69,23 +69,23 @@ Etapas ordenadas para seguir o escopo do frontend Angular com identidade visual 
 
 ## Fase 7 — Feature: Auth
 
-- [ ] **7.1** Criar `features/auth/auth.routes.ts` (lazy)
-- [ ] **7.2** **LoginComponent**: formulário email/senha, botão CTA `bg-accent`, chamada ao AuthService
-- [ ] **7.3** **RegisterComponent**: formulário displayName, email, senha; mesmo padrão visual
-- [ ] **7.4** Testar fluxo completo: registro → login → redirecionamento para `/home`
+- [x] **7.1** Criar `features/auth/auth.routes.ts` (lazy)
+- [x] **7.2** **LoginComponent**: formulário email/senha, botão CTA `bg-accent`, chamada ao AuthService
+- [x] **7.3** **RegisterComponent**: formulário displayName, email, senha; mesmo padrão visual
+- [x] **7.4** Testar fluxo completo: registro → login → redirecionamento para `/home`
 
 ---
 
 ## Fase 8 — Feature: Today (Fluxo do Dia)
 
-- [ ] **8.1** Criar `features/today/today.routes.ts` (lazy, protegido por authGuard)
-- [ ] **8.2** **TodayComponent** (orquestrador):
+- [x] **8.1** Criar `features/today/today.routes.ts` (lazy, protegido por authGuard)
+- [x] **8.2** **TodayComponent** (orquestrador):
   - Injetar `TodayService`; `viewState` computed a partir de `today` (loading | morning | focus | done)
   - Template com `@switch (viewState())`: LoadingSpinner, CheckinMorning, FocusCard, DayDone
   - `ngOnInit` → `svc.load()`; handler `onChecked` chamando `svc.complete(v)`
-- [ ] **8.3** **CheckinMorningComponent**: fundo `bg-ink`, título serif italic creme, input com borda accent, botão "Definir minha coisa" e "pular por hoje"
-- [ ] **8.4** **FocusCardComponent**: input `[entry]`, output `(checked)`; card com intenção; botões "Fiz isso" (moss-pale) e "Não fiz" (accent-pale)
-- [ ] **8.5** **DayDoneComponent**: exibir estado do dia encerrado (usar `[entry]` e identidade visual)
+- [x] **8.3** **CheckinMorningComponent**: fundo `bg-ink`, título serif italic creme, input com borda accent, botão "Definir minha coisa" e "pular por hoje"
+- [x] **8.4** **FocusCardComponent**: input `[entry]`, output `(checked)`; card com intenção; botões "Fiz isso" (moss-pale) e "Não fiz" (accent-pale)
+- [x] **8.5** **DayDoneComponent**: exibir estado do dia encerrado (usar `[entry]` e identidade visual)
 
 ---
 

@@ -53,17 +53,17 @@ Etapas ordenadas para seguir o escopo do frontend Angular com identidade visual 
 
 ## Fase 5 — Core: Services
 
-- [ ] **5.1** **AuthService**: Signals `currentUser`, `isLoggedIn`; métodos `register`, `login`, `logout`, `getToken`, `isAuthenticated`; `fetchMe()` no construtor se houver token
-- [ ] **5.2** **TodayService**: signal `today` (undefined | null | DailyEntry); métodos `load()`, `create(intention)`, `complete(completed)`, `skip()`
-- [ ] **5.3** **HistoryService**: método `getMonth(month: string)` retornando `HistoryResponse`
+- [x] **5.1** **AuthService**: Signals `currentUser`, `isLoggedIn`; métodos `register`, `login`, `logout`, `getToken`, `isAuthenticated`; `fetchMe()` no construtor se houver token
+- [x] **5.2** **TodayService**: signal `today` (undefined | null | DailyEntry); métodos `load()`, `create(intention)`, `complete(completed)`, `skip()`
+- [x] **5.3** **HistoryService**: método `getMonth(month: string)` retornando `HistoryResponse`
 
 ---
 
 ## Fase 6 — Shared: Componentes e Pipes
 
-- [ ] **6.1** **NavbarComponent**: links para home, history, settings; usar `RouterLinkActive` com `text-accent` na rota ativa (identidade visual)
-- [ ] **6.2** **LoadingSpinnerComponent**: spinner de carregamento usando classes Tailwind da identidade
-- [ ] **6.3** **FormatDatePipe**: transformar `YYYY-MM-DD` em data legível em pt-BR
+- [x] **6.1** **NavbarComponent**: links para home, history, settings; usar `RouterLinkActive` com `text-accent` na rota ativa (identidade visual)
+- [x] **6.2** **LoadingSpinnerComponent**: spinner de carregamento usando classes Tailwind da identidade
+- [x] **6.3** **FormatDatePipe**: transformar `YYYY-MM-DD` em data legível em pt-BR
 
 ---
 

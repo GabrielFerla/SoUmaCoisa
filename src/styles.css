@@ -1,1 +1,44 @@
-/* You can add global styles to this file, and also import other style files */
+/* Fontes Google — identidade visual */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Fraunces:ital,wght@0,300;0,700;1,300;1,700&display=swap');
+
+/* Tailwind v4 */
+@import "tailwindcss";
+@plugin "@tailwindcss/forms";
+
+/* Tokens da identidade visual — Só Uma Coisa */
+@theme {
+  /* Cores */
+  --color-ink: #1a1614;
+  --color-cream: #f5f0e8;
+  --color-warm-white: #faf8f4;
+  --color-accent: #c8522a;
+  --color-accent-light: #e8785a;
+  --color-accent-pale: #f5ddd4;
+  --color-muted: #8a8076;
+  --color-border: #e0d8cc;
+  --color-moss: #4a7c59;
+  --color-moss-pale: #ddeee3;
+
+  /* Fontes */
+  --font-sans: Inter, ui-sans-serif, sans-serif;
+  --font-serif: Fraunces, ui-serif, Georgia, serif;
+
+  /* Border radius */
+  --radius-card: 20px;
+  --radius-btn: 14px;
+  --radius-tag: 10px;
+
+  /* Sombras */
+  --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.08);
+  --shadow-phone: 0 40px 80px rgba(0, 0, 0, 0.25);
+}
+
+/* Reset base */
+@layer base {
+  body {
+    @apply font-sans bg-warm-white text-ink antialiased;
+  }
+  * {
+    @apply box-border;
+  }
+}

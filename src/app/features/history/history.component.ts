@@ -35,52 +35,54 @@ function nextMonth(month: string): string {
   imports: [NavbarComponent, CalendarComponent],
   template: `
     <app-navbar />
-    <div class="min-h-screen bg-warm-white p-6">
-      <h1 class="font-serif text-3xl font-bold text-ink mb-6">Histórico</h1>
+    <div class="min-h-screen bg-warm-white px-4 py-5">
+      <div class="max-w-xs mx-auto">
+        <h1 class="font-serif text-xl font-bold text-ink mb-4">Histórico</h1>
 
-      <div class="flex items-center justify-between gap-4 mb-6 max-w-md">
-        <button
-          type="button"
-          (click)="goPrevMonth()"
-          class="p-2 rounded-btn border border-border text-ink hover:bg-border/50 transition-colors"
-          aria-label="Mês anterior"
-        >
-          ‹
-        </button>
-        <span class="font-sans font-semibold text-ink capitalize">
-          {{ monthLabel() }}
-        </span>
-        <button
-          type="button"
-          (click)="goNextMonth()"
-          class="p-2 rounded-btn border border-border text-ink hover:bg-border/50 transition-colors"
-          aria-label="Próximo mês"
-        >
-          ›
-        </button>
-      </div>
-
-      @if (loading()) {
-        <p class="text-muted text-sm">Carregando...</p>
-      } @else if (errorMessage()) {
-        <p class="text-accent text-sm">{{ errorMessage() }}</p>
-      } @else if (data()) {
-        <div class="mb-6 flex flex-wrap gap-4 text-sm">
-          <span class="bg-moss-pale text-moss px-3 py-1 rounded-tag font-medium">
-            Fez: {{ data()!.summary.completed }}
+        <div class="flex items-center justify-between gap-2 mb-4">
+          <button
+            type="button"
+            (click)="goPrevMonth()"
+            class="size-8 flex items-center justify-center rounded-btn border border-border text-ink hover:bg-border/50 transition-colors text-lg leading-none"
+            aria-label="Mês anterior"
+          >
+            ‹
+          </button>
+          <span class="font-sans text-sm font-semibold text-ink capitalize">
+            {{ monthLabel() }}
           </span>
-          <span class="bg-accent-pale text-accent px-3 py-1 rounded-tag font-medium">
-            Não fez: {{ data()!.summary.not_completed }}
-          </span>
-          <span class="bg-border text-muted px-3 py-1 rounded-tag font-medium">
-            Pulou: {{ data()!.summary.skipped }}
-          </span>
+          <button
+            type="button"
+            (click)="goNextMonth()"
+            class="size-8 flex items-center justify-center rounded-btn border border-border text-ink hover:bg-border/50 transition-colors text-lg leading-none"
+            aria-label="Próximo mês"
+          >
+            ›
+          </button>
         </div>
-        <app-calendar
-          [month]="currentMonth()"
-          [entries]="data()!.entries"
-        />
-      }
+
+        @if (loading()) {
+          <p class="text-muted text-xs">Carregando...</p>
+        } @else if (errorMessage()) {
+          <p class="text-accent text-xs">{{ errorMessage() }}</p>
+        } @else if (data()) {
+          <div class="mb-3 flex flex-wrap gap-2 text-xs">
+            <span class="bg-moss-pale text-moss px-2 py-0.5 rounded-tag font-medium">
+              Fez: {{ data()!.summary.completed }}
+            </span>
+            <span class="bg-accent-pale text-accent px-2 py-0.5 rounded-tag font-medium">
+              Não fez: {{ data()!.summary.not_completed }}
+            </span>
+            <span class="bg-border text-muted px-2 py-0.5 rounded-tag font-medium">
+              Pulou: {{ data()!.summary.skipped }}
+            </span>
+          </div>
+          <app-calendar
+            [month]="currentMonth()"
+            [entries]="data()!.entries"
+          />
+        }
+      </div>
     </div>
   `,
 })

@@ -13,20 +13,20 @@ interface DayCell {
   selector: 'app-calendar',
   standalone: true,
   template: `
-    <div class="bg-warm-white rounded-card border border-border p-4 shadow-card">
-      <div class="grid grid-cols-7 gap-1 text-center text-xs font-semibold text-muted uppercase tracking-wider mb-2">
-        <span>Dom</span>
-        <span>Seg</span>
-        <span>Ter</span>
-        <span>Qua</span>
-        <span>Qui</span>
-        <span>Sex</span>
-        <span>Sáb</span>
+    <div class="w-full max-w-[240px] mx-auto rounded-card border border-border p-2.5 shadow-card bg-cream/30">
+      <div class="grid grid-cols-7 gap-0.5 text-center text-[10px] font-semibold text-muted uppercase tracking-wider mb-1">
+        <span>D</span>
+        <span>S</span>
+        <span>T</span>
+        <span>Q</span>
+        <span>Q</span>
+        <span>S</span>
+        <span>S</span>
       </div>
-      <div class="grid grid-cols-7 gap-1">
+      <div class="grid grid-cols-7 gap-0.5">
         @for (cell of grid(); track cell.dateStr + '-' + cell.day) {
           <div
-            class="aspect-square flex items-center justify-center rounded-tag text-sm font-sans font-medium transition-colors"
+            class="aspect-square min-w-0 flex items-center justify-center rounded-md text-[11px] font-sans font-medium transition-colors"
             [class]="cellClasses(cell)"
           >
             @if (cell.day !== null) {

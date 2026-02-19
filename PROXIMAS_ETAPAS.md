@@ -91,9 +91,9 @@ Etapas ordenadas para seguir o escopo do frontend Angular com identidade visual 
 
 ## Fase 9 — Feature: History
 
-- [ ] **9.1** Criar `features/history/history.routes.ts` (lazy, authGuard)
-- [ ] **9.2** **HistoryComponent**: container da tela de histórico; integrar calendário e possível seletor de mês
-- [ ] **9.3** **CalendarComponent**: lógica de cores por estado do dia:
+- [x] **9.1** Criar `features/history/history.routes.ts` (lazy, authGuard)
+- [x] **9.2** **HistoryComponent**: container da tela de histórico; integrar calendário e possível seletor de mês
+- [x] **9.3** **CalendarComponent**: lógica de cores por estado do dia:
   - `completed === true` → `bg-moss text-white`
   - `completed === false` → `bg-accent text-white`
   - `skipped === true` → `bg-border text-muted`
@@ -104,16 +104,16 @@ Etapas ordenadas para seguir o escopo do frontend Angular com identidade visual 
 
 ## Fase 10 — Feature: Settings
 
-- [ ] **10.1** Criar `features/settings/settings.routes.ts` (lazy, authGuard)
-- [ ] **10.2** **SettingsComponent**: formulário de edição (ex.: displayName, timezone) + botão de logout
+- [x] **10.1** Criar `features/settings/settings.routes.ts` (lazy, authGuard)
+- [x] **10.2** **SettingsComponent**: formulário de edição (ex.: displayName, timezone) + botão de logout
 
 ---
 
 ## Fase 11 — Revisão e Polimento
 
-- [ ] **11.1** Garantir que nenhum componente use cores ou fontes hardcoded — apenas classes Tailwind semânticas (`bg-ink`, `text-accent`, `font-serif`, etc.)
-- [ ] **11.2** Conferir roteamento: `/` → `/home`, `**` → `/home`; rotas auth sem guard; home/history/settings com authGuard
-- [ ] **11.3** Testar integração com a API Symfony (ambiente configurado em `environment.ts`)
+- [x] **11.1** Garantir que nenhum componente use cores ou fontes hardcoded — apenas classes Tailwind semânticas (`bg-ink`, `text-accent`, `font-serif`, etc.)
+- [x] **11.2** Conferir roteamento: `/` → `/home`, `**` → `/home`; rotas auth sem guard; home/history/settings com authGuard
+- [x] **11.3** Testar integração com a API Symfony (ambiente configurado em `environment.ts`)
 
 ---
 

@@ -54,6 +54,12 @@ export class AuthService {
     return localStorage.getItem(TOKEN_KEY);
   }
 
+  updateProfile(displayName: string, timezone: string) {
+    return this.http
+      .patch<unknown>(`${environment.apiUrl}/api/me`, { displayName, timezone })
+      .pipe(tap((u) => this.currentUser.set(normalizeUser(u))));
+  }
+
   isAuthenticated(): boolean {
     return !!this.getToken();
   }

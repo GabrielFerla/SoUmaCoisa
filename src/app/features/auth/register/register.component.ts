@@ -8,8 +8,8 @@ import { AuthService } from '../../../core/services/auth.service';
   standalone: true,
   imports: [ReactiveFormsModule, RouterLink],
   template: `
-    <div class="min-h-screen bg-warm-white flex items-center justify-center w-full px-4 py-8">
-      <div class="w-full max-w-md">
+    <div class="min-h-screen bg-warm-white flex items-center justify-center w-full px-4 py-8 box-border">
+      <div class="w-full max-w-md mx-auto shrink-0">
         <div class="border border-border rounded-card bg-cream/30 shadow-card p-8">
           <h1 class="font-serif text-3xl font-bold text-ink mb-2 text-center">Criar conta</h1>
           <p class="text-muted text-sm mb-6 text-center">Cadastre-se no Só Uma Coisa</p>

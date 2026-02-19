@@ -20,14 +20,15 @@ const TIMEZONES = [
   imports: [ReactiveFormsModule, NavbarComponent],
   template: `
     <app-navbar />
-    <div class="min-h-screen bg-warm-white p-6">
-      <h1 class="font-serif text-3xl font-bold text-ink mb-6">Configurações</h1>
+    <div class="min-h-screen bg-warm-white px-4 py-8">
+      <div class="max-w-md mx-auto">
+        <h1 class="font-serif text-3xl font-bold text-ink mb-6">Configurações</h1>
 
-      <form
-        [formGroup]="form"
-        (ngSubmit)="onSubmit()"
-        class="max-w-md flex flex-col gap-4"
-      >
+        <form
+          [formGroup]="form"
+          (ngSubmit)="onSubmit()"
+          class="flex flex-col gap-4"
+        >
         @if (successMessage()) {
           <p class="text-moss text-sm font-medium">{{ successMessage() }}</p>
         }
@@ -68,14 +69,15 @@ const TIMEZONES = [
         </button>
       </form>
 
-      <div class="mt-10 pt-6 border-t border-border">
-        <button
-          type="button"
-          (click)="logout()"
-          class="px-4 py-2 rounded-btn border border-accent text-accent font-semibold text-sm hover:bg-accent-pale transition-colors"
-        >
-          Sair da conta
-        </button>
+        <div class="mt-10 pt-6 border-t border-border">
+          <button
+            type="button"
+            (click)="logout()"
+            class="px-4 py-2 rounded-btn border border-accent text-accent font-semibold text-sm hover:bg-accent-pale transition-colors"
+          >
+            Sair da conta
+          </button>
+        </div>
       </div>
     </div>
   `,

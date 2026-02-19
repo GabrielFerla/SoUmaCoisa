@@ -35,26 +35,26 @@ function nextMonth(month: string): string {
   imports: [NavbarComponent, CalendarComponent],
   template: `
     <app-navbar />
-    <div class="min-h-screen bg-warm-white px-4 py-5">
-      <div class="max-w-xs mx-auto">
-        <h1 class="font-serif text-xl font-bold text-ink mb-4">Histórico</h1>
+    <div class="min-h-screen bg-warm-white px-4 py-8">
+      <div class="max-w-md mx-auto">
+        <h1 class="font-serif text-3xl font-bold text-ink mb-6">Histórico</h1>
 
-        <div class="flex items-center justify-between gap-2 mb-4">
+        <div class="flex items-center justify-between gap-4 mb-6">
           <button
             type="button"
             (click)="goPrevMonth()"
-            class="size-8 flex items-center justify-center rounded-btn border border-border text-ink hover:bg-border/50 transition-colors text-lg leading-none"
+            class="size-10 flex items-center justify-center rounded-btn border border-border text-ink hover:bg-border/50 transition-colors text-xl leading-none"
             aria-label="Mês anterior"
           >
             ‹
           </button>
-          <span class="font-sans text-sm font-semibold text-ink capitalize">
+          <span class="font-sans text-lg font-semibold text-ink capitalize">
             {{ monthLabel() }}
           </span>
           <button
             type="button"
             (click)="goNextMonth()"
-            class="size-8 flex items-center justify-center rounded-btn border border-border text-ink hover:bg-border/50 transition-colors text-lg leading-none"
+            class="size-10 flex items-center justify-center rounded-btn border border-border text-ink hover:bg-border/50 transition-colors text-xl leading-none"
             aria-label="Próximo mês"
           >
             ›
@@ -62,18 +62,18 @@ function nextMonth(month: string): string {
         </div>
 
         @if (loading()) {
-          <p class="text-muted text-xs">Carregando...</p>
+          <p class="text-muted text-sm">Carregando...</p>
         } @else if (errorMessage()) {
-          <p class="text-accent text-xs">{{ errorMessage() }}</p>
+          <p class="text-accent text-sm">{{ errorMessage() }}</p>
         } @else if (data()) {
-          <div class="mb-3 flex flex-wrap gap-2 text-xs">
-            <span class="bg-moss-pale text-moss px-2 py-0.5 rounded-tag font-medium">
+          <div class="mb-5 flex flex-wrap gap-3 text-sm">
+            <span class="bg-moss-pale text-moss px-3 py-1.5 rounded-tag font-medium">
               Fez: {{ data()!.summary.completed }}
             </span>
-            <span class="bg-accent-pale text-accent px-2 py-0.5 rounded-tag font-medium">
+            <span class="bg-accent-pale text-accent px-3 py-1.5 rounded-tag font-medium">
               Não fez: {{ data()!.summary.not_completed }}
             </span>
-            <span class="bg-border text-muted px-2 py-0.5 rounded-tag font-medium">
+            <span class="bg-border text-muted px-3 py-1.5 rounded-tag font-medium">
               Pulou: {{ data()!.summary.skipped }}
             </span>
           </div>
